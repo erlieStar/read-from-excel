@@ -1,6 +1,5 @@
 package com.javashitang.blog.entity;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class HddpCustomRelationRule {
@@ -24,7 +23,7 @@ public class HddpCustomRelationRule {
 
     private String relationDesc;
 
-    private BigDecimal dispatchCount;
+    private Double dispatchCount;
 
     private String costSource;
 
@@ -38,7 +37,7 @@ public class HddpCustomRelationRule {
 
     private Integer isDel;
 
-    public HddpCustomRelationRule(Long id, String mainGoodSecondCategory, Integer mainGoodType, String mainCode, String mainDesc, String relationGoodSecondCategory, String relationGoodSecondCategoryCode, Integer relationGoodType, String relationCode, String relationDesc, BigDecimal dispatchCount, String costSource, String createUser, LocalDateTime createTime, String lastModifyUser, LocalDateTime lastModifyTime, Integer isDel) {
+    public HddpCustomRelationRule(Long id, String mainGoodSecondCategory, Integer mainGoodType, String mainCode, String mainDesc, String relationGoodSecondCategory, String relationGoodSecondCategoryCode, Integer relationGoodType, String relationCode, String relationDesc, Double dispatchCount, String costSource, String createUser, LocalDateTime createTime, String lastModifyUser, LocalDateTime lastModifyTime, Integer isDel) {
         this.id = id;
         this.mainGoodSecondCategory = mainGoodSecondCategory;
         this.mainGoodType = mainGoodType;
@@ -142,11 +141,11 @@ public class HddpCustomRelationRule {
         this.relationDesc = relationDesc == null ? null : relationDesc.trim();
     }
 
-    public BigDecimal getDispatchCount() {
+    public Double getDispatchCount() {
         return dispatchCount;
     }
 
-    public void setDispatchCount(BigDecimal dispatchCount) {
+    public void setDispatchCount(Double dispatchCount) {
         this.dispatchCount = dispatchCount;
     }
 

@@ -1,6 +1,9 @@
 package com.javashitang.blog.service.impl;
 
+import com.alibaba.excel.EasyExcel;
 import com.javashitang.blog.common.ServerResponse;
+import com.javashitang.blog.domain.MappingData;
+import com.javashitang.blog.service.MappingListener;
 import com.javashitang.blog.service.inf.ReadService;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -21,28 +24,12 @@ import java.io.IOException;
 @Service
 public class ReadServiceImpl implements ReadService {
 
+    private static final String fileName = "/Users/li/材料-安装费对应关系表.xlsx";
+
     @Override
     public ServerResponse mapping() {
-        try {
-            doMapping();
-        } catch (Exception e) {
-            log.info("doMapping error", e);
-            return ServerResponse.error();
-        }
+        log.info("mapping");
+        EasyExcel.read(fileName, MappingData.class, new MappingListener()).sheet("对应关系").headRowNumber(2).doRead();
         return ServerResponse.success();
-    }
-
-    public void doMapping() throws Exception {
-        log.info("start doMapping");
-        XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream("/Users/li/材料-安装费对应关系表.xlsx"));
-        XSSFSheet sheet = workbook.getSheet("对应关系");
-        int lastRowIndex = sheet.getLastRowNum();
-        log.info("lastRowIndex is: {}", lastRowIndex);
-        for (int i = 1; i <= lastRowIndex; i++) {
-            XSSFRow row = sheet.getRow(i);
-            String content = row.getCell(0).getStringCellValue();
-            log.info(content);
-        }
-        log.info("end");
     }
 }
