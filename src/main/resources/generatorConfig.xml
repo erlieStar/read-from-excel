@@ -78,11 +78,14 @@
 
         <!--tableName表名，domainObjectName生成Java类的类名，enableCountByExample是否可以通过对象查数量,其他类似-->
         <!--用这个配置-->
-        <table tableName="hddp_dispatch_order_scene_v2" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
+<!--        <table tableName="hddp_dispatch_order_scene_v2" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
 
-        <table tableName="hddp_custom_relation_rule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <columnOverride column="dispatch_count" javaType="java.lang.Double"/>
+<!--        <table tableName="hddp_custom_relation_rule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <columnOverride column="dispatch_count" javaType="java.lang.Double"/>-->
+<!--        </table>-->
+
+        <table tableName="hddp_category_custom_mapping_rule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
 
         <!-- geelynote mybatis插件的搭建 -->

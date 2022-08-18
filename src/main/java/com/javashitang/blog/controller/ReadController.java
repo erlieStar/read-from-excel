@@ -22,4 +22,9 @@ public class ReadController {
     public ServerResponse mapping() {
         return readService.mapping();
     }
+
+    @GetMapping("category")
+    public ServerResponse category() {
+        return readService.category();
+    }
 }

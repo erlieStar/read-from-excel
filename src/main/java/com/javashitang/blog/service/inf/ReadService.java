@@ -9,4 +9,6 @@ import com.javashitang.blog.common.ServerResponse;
 public interface ReadService {
 
     ServerResponse mapping();
+
+    ServerResponse category();
 }
