@@ -38,6 +38,7 @@ public class MappingListener implements ReadListener<MappingData> {
         hddpDispatchOrderSceneV2.setCityCode("110000");
         hddpDispatchOrderSceneV2.setZiroomVersionId(mappingData.getVersionId());
         hddpDispatchOrderSceneV2.setOrderType(orderTypeMap.get(mappingData.getOrderType()));
+        hddpDispatchOrderSceneV2.setSceneType(4);
         hddpDispatchOrderSceneV2Mapper.insertSelective(hddpDispatchOrderSceneV2);
 
         HddpCustomRelationRule hddpCustomRelationRule = new HddpCustomRelationRule();
