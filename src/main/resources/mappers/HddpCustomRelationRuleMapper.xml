@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javashitang.blog.dao.HddpCustomRelationRuleMapper">
+  <resultMap id="BaseResultMap" type="com.javashitang.blog.entity.HddpCustomRelationRule">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="main_good_second_category" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="main_good_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="main_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="main_desc" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="relation_good_second_category" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="relation_good_second_category_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="relation_good_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="relation_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="relation_desc" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="dispatch_count" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="cost_source" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="last_modify_user" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="last_modify_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="is_del" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, main_good_second_category, main_good_type, main_code, main_desc, relation_good_second_category, 
+    relation_good_second_category_code, relation_good_type, relation_code, relation_desc, 
+    dispatch_count, cost_source, create_user, create_time, last_modify_user, last_modify_time, 
+    is_del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hddp_custom_relation_rule
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from hddp_custom_relation_rule
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.javashitang.blog.entity.HddpCustomRelationRule">
+    insert into hddp_custom_relation_rule (id, main_good_second_category, main_good_type, 
+      main_code, main_desc, relation_good_second_category, 
+      relation_good_second_category_code, relation_good_type, 
+      relation_code, relation_desc, dispatch_count, 
+      cost_source, create_user, create_time, 
+      last_modify_user, last_modify_time, is_del
+      )
+    values (#{id,jdbcType=BIGINT}, #{mainGoodSecondCategory,jdbcType=VARCHAR}, #{mainGoodType,jdbcType=INTEGER}, 
+      #{mainCode,jdbcType=VARCHAR}, #{mainDesc,jdbcType=VARCHAR}, #{relationGoodSecondCategory,jdbcType=VARCHAR}, 
+      #{relationGoodSecondCategoryCode,jdbcType=VARCHAR}, #{relationGoodType,jdbcType=INTEGER}, 
+      #{relationCode,jdbcType=VARCHAR}, #{relationDesc,jdbcType=VARCHAR}, #{dispatchCount,jdbcType=DECIMAL}, 
+      #{costSource,jdbcType=VARCHAR}, #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{lastModifyUser,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.javashitang.blog.entity.HddpCustomRelationRule">
+    insert into hddp_custom_relation_rule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="mainGoodSecondCategory != null">
+        main_good_second_category,
+      </if>
+      <if test="mainGoodType != null">
+        main_good_type,
+      </if>
+      <if test="mainCode != null">
+        main_code,
+      </if>
+      <if test="mainDesc != null">
+        main_desc,
+      </if>
+      <if test="relationGoodSecondCategory != null">
+        relation_good_second_category,
+      </if>
+      <if test="relationGoodSecondCategoryCode != null">
+        relation_good_second_category_code,
+      </if>
+      <if test="relationGoodType != null">
+        relation_good_type,
+      </if>
+      <if test="relationCode != null">
+        relation_code,
+      </if>
+      <if test="relationDesc != null">
+        relation_desc,
+      </if>
+      <if test="dispatchCount != null">
+        dispatch_count,
+      </if>
+      <if test="costSource != null">
+        cost_source,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastModifyUser != null">
+        last_modify_user,
+      </if>
+      <if test="lastModifyTime != null">
+        last_modify_time,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="mainGoodSecondCategory != null">
+        #{mainGoodSecondCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="mainGoodType != null">
+        #{mainGoodType,jdbcType=INTEGER},
+      </if>
+      <if test="mainCode != null">
+        #{mainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mainDesc != null">
+        #{mainDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="relationGoodSecondCategory != null">
+        #{relationGoodSecondCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="relationGoodSecondCategoryCode != null">
+        #{relationGoodSecondCategoryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="relationGoodType != null">
+        #{relationGoodType,jdbcType=INTEGER},
+      </if>
+      <if test="relationCode != null">
+        #{relationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="relationDesc != null">
+        #{relationDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchCount != null">
+        #{dispatchCount,jdbcType=DECIMAL},
+      </if>
+      <if test="costSource != null">
+        #{costSource,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUser != null">
+        #{lastModifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.javashitang.blog.entity.HddpCustomRelationRule">
+    update hddp_custom_relation_rule
+    <set>
+      <if test="mainGoodSecondCategory != null">
+        main_good_second_category = #{mainGoodSecondCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="mainGoodType != null">
+        main_good_type = #{mainGoodType,jdbcType=INTEGER},
+      </if>
+      <if test="mainCode != null">
+        main_code = #{mainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mainDesc != null">
+        main_desc = #{mainDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="relationGoodSecondCategory != null">
+        relation_good_second_category = #{relationGoodSecondCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="relationGoodSecondCategoryCode != null">
+        relation_good_second_category_code = #{relationGoodSecondCategoryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="relationGoodType != null">
+        relation_good_type = #{relationGoodType,jdbcType=INTEGER},
+      </if>
+      <if test="relationCode != null">
+        relation_code = #{relationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="relationDesc != null">
+        relation_desc = #{relationDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchCount != null">
+        dispatch_count = #{dispatchCount,jdbcType=DECIMAL},
+      </if>
+      <if test="costSource != null">
+        cost_source = #{costSource,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUser != null">
+        last_modify_user = #{lastModifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.javashitang.blog.entity.HddpCustomRelationRule">
+    update hddp_custom_relation_rule
+    set main_good_second_category = #{mainGoodSecondCategory,jdbcType=VARCHAR},
+      main_good_type = #{mainGoodType,jdbcType=INTEGER},
+      main_code = #{mainCode,jdbcType=VARCHAR},
+      main_desc = #{mainDesc,jdbcType=VARCHAR},
+      relation_good_second_category = #{relationGoodSecondCategory,jdbcType=VARCHAR},
+      relation_good_second_category_code = #{relationGoodSecondCategoryCode,jdbcType=VARCHAR},
+      relation_good_type = #{relationGoodType,jdbcType=INTEGER},
+      relation_code = #{relationCode,jdbcType=VARCHAR},
+      relation_desc = #{relationDesc,jdbcType=VARCHAR},
+      dispatch_count = #{dispatchCount,jdbcType=DECIMAL},
+      cost_source = #{costSource,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_modify_user = #{lastModifyUser,jdbcType=VARCHAR},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

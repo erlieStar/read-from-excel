@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javashitang.blog.dao.HddpDispatchOrderSceneV2Mapper">
+  <resultMap id="BaseResultMap" type="com.javashitang.blog.entity.HddpDispatchOrderSceneV2">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="relation_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="scene_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="city_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ziroom_version_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="style" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="style_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_type_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="last_modify_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="is_del" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, relation_id, scene_type, city_code, ziroom_version_id, style, style_name, product_type, 
+    product_type_name, order_type, create_time, last_modify_time, is_del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hddp_dispatch_order_scene_v2
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from hddp_dispatch_order_scene_v2
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.javashitang.blog.entity.HddpDispatchOrderSceneV2">
+    insert into hddp_dispatch_order_scene_v2 (id, relation_id, scene_type, 
+      city_code, ziroom_version_id, style, 
+      style_name, product_type, product_type_name, 
+      order_type, create_time, last_modify_time, 
+      is_del)
+    values (#{id,jdbcType=BIGINT}, #{relationId,jdbcType=BIGINT}, #{sceneType,jdbcType=INTEGER}, 
+      #{cityCode,jdbcType=VARCHAR}, #{ziroomVersionId,jdbcType=BIGINT}, #{style,jdbcType=VARCHAR}, 
+      #{styleName,jdbcType=VARCHAR}, #{productType,jdbcType=INTEGER}, #{productTypeName,jdbcType=VARCHAR}, 
+      #{orderType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{isDel,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.javashitang.blog.entity.HddpDispatchOrderSceneV2">
+    insert into hddp_dispatch_order_scene_v2
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="relationId != null">
+        relation_id,
+      </if>
+      <if test="sceneType != null">
+        scene_type,
+      </if>
+      <if test="cityCode != null">
+        city_code,
+      </if>
+      <if test="ziroomVersionId != null">
+        ziroom_version_id,
+      </if>
+      <if test="style != null">
+        style,
+      </if>
+      <if test="styleName != null">
+        style_name,
+      </if>
+      <if test="productType != null">
+        product_type,
+      </if>
+      <if test="productTypeName != null">
+        product_type_name,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastModifyTime != null">
+        last_modify_time,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="relationId != null">
+        #{relationId,jdbcType=BIGINT},
+      </if>
+      <if test="sceneType != null">
+        #{sceneType,jdbcType=INTEGER},
+      </if>
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ziroomVersionId != null">
+        #{ziroomVersionId,jdbcType=BIGINT},
+      </if>
+      <if test="style != null">
+        #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="styleName != null">
+        #{styleName,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        #{productType,jdbcType=INTEGER},
+      </if>
+      <if test="productTypeName != null">
+        #{productTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.javashitang.blog.entity.HddpDispatchOrderSceneV2">
+    update hddp_dispatch_order_scene_v2
+    <set>
+      <if test="relationId != null">
+        relation_id = #{relationId,jdbcType=BIGINT},
+      </if>
+      <if test="sceneType != null">
+        scene_type = #{sceneType,jdbcType=INTEGER},
+      </if>
+      <if test="cityCode != null">
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ziroomVersionId != null">
+        ziroom_version_id = #{ziroomVersionId,jdbcType=BIGINT},
+      </if>
+      <if test="style != null">
+        style = #{style,jdbcType=VARCHAR},
+      </if>
+      <if test="styleName != null">
+        style_name = #{styleName,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        product_type = #{productType,jdbcType=INTEGER},
+      </if>
+      <if test="productTypeName != null">
+        product_type_name = #{productTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.javashitang.blog.entity.HddpDispatchOrderSceneV2">
+    update hddp_dispatch_order_scene_v2
+    set relation_id = #{relationId,jdbcType=BIGINT},
+      scene_type = #{sceneType,jdbcType=INTEGER},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      ziroom_version_id = #{ziroomVersionId,jdbcType=BIGINT},
+      style = #{style,jdbcType=VARCHAR},
+      style_name = #{styleName,jdbcType=VARCHAR},
+      product_type = #{productType,jdbcType=INTEGER},
+      product_type_name = #{productTypeName,jdbcType=VARCHAR},
+      order_type = #{orderType,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
