@@ -27,4 +27,9 @@ public class ReadController {
     public ServerResponse category() {
         return readService.category();
     }
+
+    @GetMapping("supplier")
+    public ServerResponse supplier() {
+        return readService.supplier();
+    }
 }

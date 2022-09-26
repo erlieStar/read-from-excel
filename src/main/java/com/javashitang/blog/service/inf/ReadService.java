@@ -11,4 +11,6 @@ public interface ReadService {
     ServerResponse mapping();
 
     ServerResponse category();
+
+    ServerResponse supplier();
 }
