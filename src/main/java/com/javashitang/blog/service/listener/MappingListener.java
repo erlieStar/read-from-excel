@@ -26,7 +26,7 @@ public class MappingListener implements ReadListener<MappingData> {
 
     private HddpDispatchOrderSceneV2Mapper hddpDispatchOrderSceneV2Mapper = SpringUtil.getBean(HddpDispatchOrderSceneV2Mapper.class);
 
-    private Long rowNum = 0L;
+    private Long rowNum = 141L;
 
     @Override
     public void invoke(MappingData mappingData, AnalysisContext analysisContext) {

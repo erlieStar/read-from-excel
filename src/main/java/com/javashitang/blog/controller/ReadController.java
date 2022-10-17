@@ -32,4 +32,9 @@ public class ReadController {
     public ServerResponse supplier() {
         return readService.supplier();
     }
+
+    @GetMapping("order")
+    public ServerResponse order() {
+        return readService.order();
+    }
 }

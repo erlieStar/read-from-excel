@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javashitang.blog.dao.OrderSearchInfoMapper">
+  <resultMap id="BaseResultMap" type="com.javashitang.blog.entity.OrderSearchInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="order_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="hirecontract_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="order_state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="city_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="rent_contract_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_zo" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_zo_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_ze" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_ze_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receive_order_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="accept_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="room_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="is_suspension" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="plan_accept_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="plan_amount_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="order_processor" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_processor_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_zd" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_zd_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="is_risk" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="hand_over_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="agent_start_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="house_source_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="house_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="rating_address" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ziroom_version_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="company_house_source" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="bz_order_extend" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="last_modify_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="is_del" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="design_state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="hire_contract_is_del" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="approval_config_count" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="assistant" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="assistant_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="config_audit_status" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="self_check_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="dispatch_order_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="order_label_str" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="dismantle_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="start_work_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="design_monitor_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="custom_metric_status" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="kitchen_design_status" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="suspension_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="presentation_version_no" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="apply_suspension_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="remove_suspension_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
+      <arg column="lay_line_accept_state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="water_electricity_accept_state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="water_proof_accept_state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="oil_tile_accept_state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="hard_cover_accept_state" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="order_oo" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_oo_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_oo_manager" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_oo_manager_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_oo_assist" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_oo_assist_code" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="order_oo_tag" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_code, hirecontract_code, order_type, order_state, city_code, rent_contract_code, 
+    order_zo, order_zo_code, order_ze, order_ze_code, receive_order_time, accept_date, 
+    room_id, is_suspension, plan_accept_date, plan_amount_date, order_processor, order_processor_code, 
+    order_zd, order_zd_code, is_risk, hand_over_date, agent_start_date, house_source_code, 
+    house_code, rating_address, ziroom_version_id, product_id, company_house_source, 
+    bz_order_extend, order_create_time, last_modify_time, create_time, update_time, is_del, 
+    design_state, hire_contract_is_del, approval_config_count, assistant, assistant_code, 
+    config_audit_status, self_check_status, dispatch_order_status, order_label_str, dismantle_status, 
+    start_work_status, design_monitor_status, custom_metric_status, kitchen_design_status, 
+    suspension_type, presentation_version_no, apply_suspension_date, remove_suspension_date, 
+    lay_line_accept_state, water_electricity_accept_state, water_proof_accept_state, 
+    oil_tile_accept_state, hard_cover_accept_state, order_oo, order_oo_code, order_oo_manager, 
+    order_oo_manager_code, order_oo_assist, order_oo_assist_code, order_oo_tag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_search_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from order_search_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.javashitang.blog.entity.OrderSearchInfo">
+    insert into order_search_info (id, order_code, hirecontract_code, 
+      order_type, order_state, city_code, 
+      rent_contract_code, order_zo, order_zo_code, 
+      order_ze, order_ze_code, receive_order_time, 
+      accept_date, room_id, is_suspension, 
+      plan_accept_date, plan_amount_date, order_processor, 
+      order_processor_code, order_zd, order_zd_code, 
+      is_risk, hand_over_date, agent_start_date, 
+      house_source_code, house_code, rating_address, 
+      ziroom_version_id, product_id, company_house_source, 
+      bz_order_extend, order_create_time, last_modify_time, 
+      create_time, update_time, is_del, 
+      design_state, hire_contract_is_del, approval_config_count, 
+      assistant, assistant_code, config_audit_status, 
+      self_check_status, dispatch_order_status, order_label_str, 
+      dismantle_status, start_work_status, design_monitor_status, 
+      custom_metric_status, kitchen_design_status, 
+      suspension_type, presentation_version_no, 
+      apply_suspension_date, remove_suspension_date, 
+      lay_line_accept_state, water_electricity_accept_state, 
+      water_proof_accept_state, oil_tile_accept_state, 
+      hard_cover_accept_state, order_oo, order_oo_code, 
+      order_oo_manager, order_oo_manager_code, order_oo_assist, 
+      order_oo_assist_code, order_oo_tag)
+    values (#{id,jdbcType=BIGINT}, #{orderCode,jdbcType=VARCHAR}, #{hirecontractCode,jdbcType=VARCHAR}, 
+      #{orderType,jdbcType=INTEGER}, #{orderState,jdbcType=INTEGER}, #{cityCode,jdbcType=VARCHAR}, 
+      #{rentContractCode,jdbcType=VARCHAR}, #{orderZo,jdbcType=VARCHAR}, #{orderZoCode,jdbcType=VARCHAR}, 
+      #{orderZe,jdbcType=VARCHAR}, #{orderZeCode,jdbcType=VARCHAR}, #{receiveOrderTime,jdbcType=TIMESTAMP}, 
+      #{acceptDate,jdbcType=TIMESTAMP}, #{roomId,jdbcType=BIGINT}, #{isSuspension,jdbcType=INTEGER}, 
+      #{planAcceptDate,jdbcType=TIMESTAMP}, #{planAmountDate,jdbcType=TIMESTAMP}, #{orderProcessor,jdbcType=VARCHAR}, 
+      #{orderProcessorCode,jdbcType=VARCHAR}, #{orderZd,jdbcType=VARCHAR}, #{orderZdCode,jdbcType=VARCHAR}, 
+      #{isRisk,jdbcType=INTEGER}, #{handOverDate,jdbcType=TIMESTAMP}, #{agentStartDate,jdbcType=TIMESTAMP}, 
+      #{houseSourceCode,jdbcType=VARCHAR}, #{houseCode,jdbcType=VARCHAR}, #{ratingAddress,jdbcType=VARCHAR}, 
+      #{ziroomVersionId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{companyHouseSource,jdbcType=INTEGER}, 
+      #{bzOrderExtend,jdbcType=VARCHAR}, #{orderCreateTime,jdbcType=TIMESTAMP}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=INTEGER}, 
+      #{designState,jdbcType=INTEGER}, #{hireContractIsDel,jdbcType=INTEGER}, #{approvalConfigCount,jdbcType=INTEGER}, 
+      #{assistant,jdbcType=VARCHAR}, #{assistantCode,jdbcType=VARCHAR}, #{configAuditStatus,jdbcType=VARCHAR}, 
+      #{selfCheckStatus,jdbcType=INTEGER}, #{dispatchOrderStatus,jdbcType=INTEGER}, #{orderLabelStr,jdbcType=VARCHAR}, 
+      #{dismantleStatus,jdbcType=INTEGER}, #{startWorkStatus,jdbcType=INTEGER}, #{designMonitorStatus,jdbcType=INTEGER}, 
+      #{customMetricStatus,jdbcType=VARCHAR}, #{kitchenDesignStatus,jdbcType=VARCHAR}, 
+      #{suspensionType,jdbcType=INTEGER}, #{presentationVersionNo,jdbcType=INTEGER}, 
+      #{applySuspensionDate,jdbcType=TIMESTAMP}, #{removeSuspensionDate,jdbcType=TIMESTAMP}, 
+      #{layLineAcceptState,jdbcType=INTEGER}, #{waterElectricityAcceptState,jdbcType=INTEGER}, 
+      #{waterProofAcceptState,jdbcType=INTEGER}, #{oilTileAcceptState,jdbcType=INTEGER}, 
+      #{hardCoverAcceptState,jdbcType=INTEGER}, #{orderOo,jdbcType=VARCHAR}, #{orderOoCode,jdbcType=VARCHAR}, 
+      #{orderOoManager,jdbcType=VARCHAR}, #{orderOoManagerCode,jdbcType=VARCHAR}, #{orderOoAssist,jdbcType=VARCHAR}, 
+      #{orderOoAssistCode,jdbcType=VARCHAR}, #{orderOoTag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.javashitang.blog.entity.OrderSearchInfo">
+    insert into order_search_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderCode != null">
+        order_code,
+      </if>
+      <if test="hirecontractCode != null">
+        hirecontract_code,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="orderState != null">
+        order_state,
+      </if>
+      <if test="cityCode != null">
+        city_code,
+      </if>
+      <if test="rentContractCode != null">
+        rent_contract_code,
+      </if>
+      <if test="orderZo != null">
+        order_zo,
+      </if>
+      <if test="orderZoCode != null">
+        order_zo_code,
+      </if>
+      <if test="orderZe != null">
+        order_ze,
+      </if>
+      <if test="orderZeCode != null">
+        order_ze_code,
+      </if>
+      <if test="receiveOrderTime != null">
+        receive_order_time,
+      </if>
+      <if test="acceptDate != null">
+        accept_date,
+      </if>
+      <if test="roomId != null">
+        room_id,
+      </if>
+      <if test="isSuspension != null">
+        is_suspension,
+      </if>
+      <if test="planAcceptDate != null">
+        plan_accept_date,
+      </if>
+      <if test="planAmountDate != null">
+        plan_amount_date,
+      </if>
+      <if test="orderProcessor != null">
+        order_processor,
+      </if>
+      <if test="orderProcessorCode != null">
+        order_processor_code,
+      </if>
+      <if test="orderZd != null">
+        order_zd,
+      </if>
+      <if test="orderZdCode != null">
+        order_zd_code,
+      </if>
+      <if test="isRisk != null">
+        is_risk,
+      </if>
+      <if test="handOverDate != null">
+        hand_over_date,
+      </if>
+      <if test="agentStartDate != null">
+        agent_start_date,
+      </if>
+      <if test="houseSourceCode != null">
+        house_source_code,
+      </if>
+      <if test="houseCode != null">
+        house_code,
+      </if>
+      <if test="ratingAddress != null">
+        rating_address,
+      </if>
+      <if test="ziroomVersionId != null">
+        ziroom_version_id,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="companyHouseSource != null">
+        company_house_source,
+      </if>
+      <if test="bzOrderExtend != null">
+        bz_order_extend,
+      </if>
+      <if test="orderCreateTime != null">
+        order_create_time,
+      </if>
+      <if test="lastModifyTime != null">
+        last_modify_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="designState != null">
+        design_state,
+      </if>
+      <if test="hireContractIsDel != null">
+        hire_contract_is_del,
+      </if>
+      <if test="approvalConfigCount != null">
+        approval_config_count,
+      </if>
+      <if test="assistant != null">
+        assistant,
+      </if>
+      <if test="assistantCode != null">
+        assistant_code,
+      </if>
+      <if test="configAuditStatus != null">
+        config_audit_status,
+      </if>
+      <if test="selfCheckStatus != null">
+        self_check_status,
+      </if>
+      <if test="dispatchOrderStatus != null">
+        dispatch_order_status,
+      </if>
+      <if test="orderLabelStr != null">
+        order_label_str,
+      </if>
+      <if test="dismantleStatus != null">
+        dismantle_status,
+      </if>
+      <if test="startWorkStatus != null">
+        start_work_status,
+      </if>
+      <if test="designMonitorStatus != null">
+        design_monitor_status,
+      </if>
+      <if test="customMetricStatus != null">
+        custom_metric_status,
+      </if>
+      <if test="kitchenDesignStatus != null">
+        kitchen_design_status,
+      </if>
+      <if test="suspensionType != null">
+        suspension_type,
+      </if>
+      <if test="presentationVersionNo != null">
+        presentation_version_no,
+      </if>
+      <if test="applySuspensionDate != null">
+        apply_suspension_date,
+      </if>
+      <if test="removeSuspensionDate != null">
+        remove_suspension_date,
+      </if>
+      <if test="layLineAcceptState != null">
+        lay_line_accept_state,
+      </if>
+      <if test="waterElectricityAcceptState != null">
+        water_electricity_accept_state,
+      </if>
+      <if test="waterProofAcceptState != null">
+        water_proof_accept_state,
+      </if>
+      <if test="oilTileAcceptState != null">
+        oil_tile_accept_state,
+      </if>
+      <if test="hardCoverAcceptState != null">
+        hard_cover_accept_state,
+      </if>
+      <if test="orderOo != null">
+        order_oo,
+      </if>
+      <if test="orderOoCode != null">
+        order_oo_code,
+      </if>
+      <if test="orderOoManager != null">
+        order_oo_manager,
+      </if>
+      <if test="orderOoManagerCode != null">
+        order_oo_manager_code,
+      </if>
+      <if test="orderOoAssist != null">
+        order_oo_assist,
+      </if>
+      <if test="orderOoAssistCode != null">
+        order_oo_assist_code,
+      </if>
+      <if test="orderOoTag != null">
+        order_oo_tag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="orderCode != null">
+        #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="hirecontractCode != null">
+        #{hirecontractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="orderState != null">
+        #{orderState,jdbcType=INTEGER},
+      </if>
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="rentContractCode != null">
+        #{rentContractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZo != null">
+        #{orderZo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZoCode != null">
+        #{orderZoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZe != null">
+        #{orderZe,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZeCode != null">
+        #{orderZeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveOrderTime != null">
+        #{receiveOrderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="acceptDate != null">
+        #{acceptDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roomId != null">
+        #{roomId,jdbcType=BIGINT},
+      </if>
+      <if test="isSuspension != null">
+        #{isSuspension,jdbcType=INTEGER},
+      </if>
+      <if test="planAcceptDate != null">
+        #{planAcceptDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planAmountDate != null">
+        #{planAmountDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderProcessor != null">
+        #{orderProcessor,jdbcType=VARCHAR},
+      </if>
+      <if test="orderProcessorCode != null">
+        #{orderProcessorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZd != null">
+        #{orderZd,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZdCode != null">
+        #{orderZdCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isRisk != null">
+        #{isRisk,jdbcType=INTEGER},
+      </if>
+      <if test="handOverDate != null">
+        #{handOverDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentStartDate != null">
+        #{agentStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseSourceCode != null">
+        #{houseSourceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCode != null">
+        #{houseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAddress != null">
+        #{ratingAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ziroomVersionId != null">
+        #{ziroomVersionId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="companyHouseSource != null">
+        #{companyHouseSource,jdbcType=INTEGER},
+      </if>
+      <if test="bzOrderExtend != null">
+        #{bzOrderExtend,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCreateTime != null">
+        #{orderCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="designState != null">
+        #{designState,jdbcType=INTEGER},
+      </if>
+      <if test="hireContractIsDel != null">
+        #{hireContractIsDel,jdbcType=INTEGER},
+      </if>
+      <if test="approvalConfigCount != null">
+        #{approvalConfigCount,jdbcType=INTEGER},
+      </if>
+      <if test="assistant != null">
+        #{assistant,jdbcType=VARCHAR},
+      </if>
+      <if test="assistantCode != null">
+        #{assistantCode,jdbcType=VARCHAR},
+      </if>
+      <if test="configAuditStatus != null">
+        #{configAuditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="selfCheckStatus != null">
+        #{selfCheckStatus,jdbcType=INTEGER},
+      </if>
+      <if test="dispatchOrderStatus != null">
+        #{dispatchOrderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="orderLabelStr != null">
+        #{orderLabelStr,jdbcType=VARCHAR},
+      </if>
+      <if test="dismantleStatus != null">
+        #{dismantleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="startWorkStatus != null">
+        #{startWorkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="designMonitorStatus != null">
+        #{designMonitorStatus,jdbcType=INTEGER},
+      </if>
+      <if test="customMetricStatus != null">
+        #{customMetricStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="kitchenDesignStatus != null">
+        #{kitchenDesignStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="suspensionType != null">
+        #{suspensionType,jdbcType=INTEGER},
+      </if>
+      <if test="presentationVersionNo != null">
+        #{presentationVersionNo,jdbcType=INTEGER},
+      </if>
+      <if test="applySuspensionDate != null">
+        #{applySuspensionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="removeSuspensionDate != null">
+        #{removeSuspensionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="layLineAcceptState != null">
+        #{layLineAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="waterElectricityAcceptState != null">
+        #{waterElectricityAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="waterProofAcceptState != null">
+        #{waterProofAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="oilTileAcceptState != null">
+        #{oilTileAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="hardCoverAcceptState != null">
+        #{hardCoverAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="orderOo != null">
+        #{orderOo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoCode != null">
+        #{orderOoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoManager != null">
+        #{orderOoManager,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoManagerCode != null">
+        #{orderOoManagerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoAssist != null">
+        #{orderOoAssist,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoAssistCode != null">
+        #{orderOoAssistCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoTag != null">
+        #{orderOoTag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.javashitang.blog.entity.OrderSearchInfo">
+    update order_search_info
+    <set>
+      <if test="orderCode != null">
+        order_code = #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="hirecontractCode != null">
+        hirecontract_code = #{hirecontractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="orderState != null">
+        order_state = #{orderState,jdbcType=INTEGER},
+      </if>
+      <if test="cityCode != null">
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="rentContractCode != null">
+        rent_contract_code = #{rentContractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZo != null">
+        order_zo = #{orderZo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZoCode != null">
+        order_zo_code = #{orderZoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZe != null">
+        order_ze = #{orderZe,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZeCode != null">
+        order_ze_code = #{orderZeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveOrderTime != null">
+        receive_order_time = #{receiveOrderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="acceptDate != null">
+        accept_date = #{acceptDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roomId != null">
+        room_id = #{roomId,jdbcType=BIGINT},
+      </if>
+      <if test="isSuspension != null">
+        is_suspension = #{isSuspension,jdbcType=INTEGER},
+      </if>
+      <if test="planAcceptDate != null">
+        plan_accept_date = #{planAcceptDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planAmountDate != null">
+        plan_amount_date = #{planAmountDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderProcessor != null">
+        order_processor = #{orderProcessor,jdbcType=VARCHAR},
+      </if>
+      <if test="orderProcessorCode != null">
+        order_processor_code = #{orderProcessorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZd != null">
+        order_zd = #{orderZd,jdbcType=VARCHAR},
+      </if>
+      <if test="orderZdCode != null">
+        order_zd_code = #{orderZdCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isRisk != null">
+        is_risk = #{isRisk,jdbcType=INTEGER},
+      </if>
+      <if test="handOverDate != null">
+        hand_over_date = #{handOverDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agentStartDate != null">
+        agent_start_date = #{agentStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseSourceCode != null">
+        house_source_code = #{houseSourceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCode != null">
+        house_code = #{houseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAddress != null">
+        rating_address = #{ratingAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ziroomVersionId != null">
+        ziroom_version_id = #{ziroomVersionId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="companyHouseSource != null">
+        company_house_source = #{companyHouseSource,jdbcType=INTEGER},
+      </if>
+      <if test="bzOrderExtend != null">
+        bz_order_extend = #{bzOrderExtend,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCreateTime != null">
+        order_create_time = #{orderCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="designState != null">
+        design_state = #{designState,jdbcType=INTEGER},
+      </if>
+      <if test="hireContractIsDel != null">
+        hire_contract_is_del = #{hireContractIsDel,jdbcType=INTEGER},
+      </if>
+      <if test="approvalConfigCount != null">
+        approval_config_count = #{approvalConfigCount,jdbcType=INTEGER},
+      </if>
+      <if test="assistant != null">
+        assistant = #{assistant,jdbcType=VARCHAR},
+      </if>
+      <if test="assistantCode != null">
+        assistant_code = #{assistantCode,jdbcType=VARCHAR},
+      </if>
+      <if test="configAuditStatus != null">
+        config_audit_status = #{configAuditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="selfCheckStatus != null">
+        self_check_status = #{selfCheckStatus,jdbcType=INTEGER},
+      </if>
+      <if test="dispatchOrderStatus != null">
+        dispatch_order_status = #{dispatchOrderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="orderLabelStr != null">
+        order_label_str = #{orderLabelStr,jdbcType=VARCHAR},
+      </if>
+      <if test="dismantleStatus != null">
+        dismantle_status = #{dismantleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="startWorkStatus != null">
+        start_work_status = #{startWorkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="designMonitorStatus != null">
+        design_monitor_status = #{designMonitorStatus,jdbcType=INTEGER},
+      </if>
+      <if test="customMetricStatus != null">
+        custom_metric_status = #{customMetricStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="kitchenDesignStatus != null">
+        kitchen_design_status = #{kitchenDesignStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="suspensionType != null">
+        suspension_type = #{suspensionType,jdbcType=INTEGER},
+      </if>
+      <if test="presentationVersionNo != null">
+        presentation_version_no = #{presentationVersionNo,jdbcType=INTEGER},
+      </if>
+      <if test="applySuspensionDate != null">
+        apply_suspension_date = #{applySuspensionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="removeSuspensionDate != null">
+        remove_suspension_date = #{removeSuspensionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="layLineAcceptState != null">
+        lay_line_accept_state = #{layLineAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="waterElectricityAcceptState != null">
+        water_electricity_accept_state = #{waterElectricityAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="waterProofAcceptState != null">
+        water_proof_accept_state = #{waterProofAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="oilTileAcceptState != null">
+        oil_tile_accept_state = #{oilTileAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="hardCoverAcceptState != null">
+        hard_cover_accept_state = #{hardCoverAcceptState,jdbcType=INTEGER},
+      </if>
+      <if test="orderOo != null">
+        order_oo = #{orderOo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoCode != null">
+        order_oo_code = #{orderOoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoManager != null">
+        order_oo_manager = #{orderOoManager,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoManagerCode != null">
+        order_oo_manager_code = #{orderOoManagerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoAssist != null">
+        order_oo_assist = #{orderOoAssist,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoAssistCode != null">
+        order_oo_assist_code = #{orderOoAssistCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderOoTag != null">
+        order_oo_tag = #{orderOoTag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.javashitang.blog.entity.OrderSearchInfo">
+    update order_search_info
+    set order_code = #{orderCode,jdbcType=VARCHAR},
+      hirecontract_code = #{hirecontractCode,jdbcType=VARCHAR},
+      order_type = #{orderType,jdbcType=INTEGER},
+      order_state = #{orderState,jdbcType=INTEGER},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      rent_contract_code = #{rentContractCode,jdbcType=VARCHAR},
+      order_zo = #{orderZo,jdbcType=VARCHAR},
+      order_zo_code = #{orderZoCode,jdbcType=VARCHAR},
+      order_ze = #{orderZe,jdbcType=VARCHAR},
+      order_ze_code = #{orderZeCode,jdbcType=VARCHAR},
+      receive_order_time = #{receiveOrderTime,jdbcType=TIMESTAMP},
+      accept_date = #{acceptDate,jdbcType=TIMESTAMP},
+      room_id = #{roomId,jdbcType=BIGINT},
+      is_suspension = #{isSuspension,jdbcType=INTEGER},
+      plan_accept_date = #{planAcceptDate,jdbcType=TIMESTAMP},
+      plan_amount_date = #{planAmountDate,jdbcType=TIMESTAMP},
+      order_processor = #{orderProcessor,jdbcType=VARCHAR},
+      order_processor_code = #{orderProcessorCode,jdbcType=VARCHAR},
+      order_zd = #{orderZd,jdbcType=VARCHAR},
+      order_zd_code = #{orderZdCode,jdbcType=VARCHAR},
+      is_risk = #{isRisk,jdbcType=INTEGER},
+      hand_over_date = #{handOverDate,jdbcType=TIMESTAMP},
+      agent_start_date = #{agentStartDate,jdbcType=TIMESTAMP},
+      house_source_code = #{houseSourceCode,jdbcType=VARCHAR},
+      house_code = #{houseCode,jdbcType=VARCHAR},
+      rating_address = #{ratingAddress,jdbcType=VARCHAR},
+      ziroom_version_id = #{ziroomVersionId,jdbcType=INTEGER},
+      product_id = #{productId,jdbcType=INTEGER},
+      company_house_source = #{companyHouseSource,jdbcType=INTEGER},
+      bz_order_extend = #{bzOrderExtend,jdbcType=VARCHAR},
+      order_create_time = #{orderCreateTime,jdbcType=TIMESTAMP},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER},
+      design_state = #{designState,jdbcType=INTEGER},
+      hire_contract_is_del = #{hireContractIsDel,jdbcType=INTEGER},
+      approval_config_count = #{approvalConfigCount,jdbcType=INTEGER},
+      assistant = #{assistant,jdbcType=VARCHAR},
+      assistant_code = #{assistantCode,jdbcType=VARCHAR},
+      config_audit_status = #{configAuditStatus,jdbcType=VARCHAR},
+      self_check_status = #{selfCheckStatus,jdbcType=INTEGER},
+      dispatch_order_status = #{dispatchOrderStatus,jdbcType=INTEGER},
+      order_label_str = #{orderLabelStr,jdbcType=VARCHAR},
+      dismantle_status = #{dismantleStatus,jdbcType=INTEGER},
+      start_work_status = #{startWorkStatus,jdbcType=INTEGER},
+      design_monitor_status = #{designMonitorStatus,jdbcType=INTEGER},
+      custom_metric_status = #{customMetricStatus,jdbcType=VARCHAR},
+      kitchen_design_status = #{kitchenDesignStatus,jdbcType=VARCHAR},
+      suspension_type = #{suspensionType,jdbcType=INTEGER},
+      presentation_version_no = #{presentationVersionNo,jdbcType=INTEGER},
+      apply_suspension_date = #{applySuspensionDate,jdbcType=TIMESTAMP},
+      remove_suspension_date = #{removeSuspensionDate,jdbcType=TIMESTAMP},
+      lay_line_accept_state = #{layLineAcceptState,jdbcType=INTEGER},
+      water_electricity_accept_state = #{waterElectricityAcceptState,jdbcType=INTEGER},
+      water_proof_accept_state = #{waterProofAcceptState,jdbcType=INTEGER},
+      oil_tile_accept_state = #{oilTileAcceptState,jdbcType=INTEGER},
+      hard_cover_accept_state = #{hardCoverAcceptState,jdbcType=INTEGER},
+      order_oo = #{orderOo,jdbcType=VARCHAR},
+      order_oo_code = #{orderOoCode,jdbcType=VARCHAR},
+      order_oo_manager = #{orderOoManager,jdbcType=VARCHAR},
+      order_oo_manager_code = #{orderOoManagerCode,jdbcType=VARCHAR},
+      order_oo_assist = #{orderOoAssist,jdbcType=VARCHAR},
+      order_oo_assist_code = #{orderOoAssistCode,jdbcType=VARCHAR},
+      order_oo_tag = #{orderOoTag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

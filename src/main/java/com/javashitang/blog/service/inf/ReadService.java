@@ -13,4 +13,6 @@ public interface ReadService {
     ServerResponse category();
 
     ServerResponse supplier();
+
+    ServerResponse order();
 }

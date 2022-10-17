@@ -53,5 +53,6 @@ public class SupplierListener implements ReadListener<SupplierData> {
             supplier.setSupplierIds(String.join(",", supplier.getSupplierIdList()));
             ooZcasaGoodsSupplierMapper.insertSelective(supplier);
         }
+        System.out.println("end");
     }
 }
