@@ -50,9 +50,10 @@
       <arg column="order_label_str" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="dismantle_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="start_work_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="design_monitor_status" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="custom_metric_status" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="kitchen_design_status" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="custom_metric_status1" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="kitchen_design_status1" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="suspension_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="presentation_version_no" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="apply_suspension_date" javaType="java.time.LocalDateTime" jdbcType="TIMESTAMP" />
@@ -80,9 +81,9 @@
     bz_order_extend, order_create_time, last_modify_time, create_time, update_time, is_del, 
     design_state, hire_contract_is_del, approval_config_count, assistant, assistant_code, 
     config_audit_status, self_check_status, dispatch_order_status, order_label_str, dismantle_status, 
-    start_work_status, design_monitor_status, custom_metric_status, kitchen_design_status, 
-    suspension_type, presentation_version_no, apply_suspension_date, remove_suspension_date, 
-    lay_line_accept_state, water_electricity_accept_state, water_proof_accept_state, 
+    start_work_status, custom_metric_status, kitchen_design_status, custom_metric_status1, 
+    kitchen_design_status1, suspension_type, presentation_version_no, apply_suspension_date, 
+    remove_suspension_date, lay_line_accept_state, water_electricity_accept_state, water_proof_accept_state, 
     oil_tile_accept_state, hard_cover_accept_state, order_oo, order_oo_code, order_oo_manager, 
     order_oo_manager_code, order_oo_assist, order_oo_assist_code, order_oo_tag
   </sql>
@@ -112,9 +113,9 @@
       design_state, hire_contract_is_del, approval_config_count, 
       assistant, assistant_code, config_audit_status, 
       self_check_status, dispatch_order_status, order_label_str, 
-      dismantle_status, start_work_status, design_monitor_status, 
-      custom_metric_status, kitchen_design_status, 
-      suspension_type, presentation_version_no, 
+      dismantle_status, start_work_status, custom_metric_status, 
+      kitchen_design_status, custom_metric_status1, 
+      kitchen_design_status1, suspension_type, presentation_version_no, 
       apply_suspension_date, remove_suspension_date, 
       lay_line_accept_state, water_electricity_accept_state, 
       water_proof_accept_state, oil_tile_accept_state, 
@@ -136,9 +137,9 @@
       #{designState,jdbcType=INTEGER}, #{hireContractIsDel,jdbcType=INTEGER}, #{approvalConfigCount,jdbcType=INTEGER}, 
       #{assistant,jdbcType=VARCHAR}, #{assistantCode,jdbcType=VARCHAR}, #{configAuditStatus,jdbcType=VARCHAR}, 
       #{selfCheckStatus,jdbcType=INTEGER}, #{dispatchOrderStatus,jdbcType=INTEGER}, #{orderLabelStr,jdbcType=VARCHAR}, 
-      #{dismantleStatus,jdbcType=INTEGER}, #{startWorkStatus,jdbcType=INTEGER}, #{designMonitorStatus,jdbcType=INTEGER}, 
-      #{customMetricStatus,jdbcType=VARCHAR}, #{kitchenDesignStatus,jdbcType=VARCHAR}, 
-      #{suspensionType,jdbcType=INTEGER}, #{presentationVersionNo,jdbcType=INTEGER}, 
+      #{dismantleStatus,jdbcType=INTEGER}, #{startWorkStatus,jdbcType=INTEGER}, #{customMetricStatus,jdbcType=VARCHAR}, 
+      #{kitchenDesignStatus,jdbcType=VARCHAR}, #{customMetricStatus1,jdbcType=VARCHAR}, 
+      #{kitchenDesignStatus1,jdbcType=VARCHAR}, #{suspensionType,jdbcType=INTEGER}, #{presentationVersionNo,jdbcType=INTEGER}, 
       #{applySuspensionDate,jdbcType=TIMESTAMP}, #{removeSuspensionDate,jdbcType=TIMESTAMP}, 
       #{layLineAcceptState,jdbcType=INTEGER}, #{waterElectricityAcceptState,jdbcType=INTEGER}, 
       #{waterProofAcceptState,jdbcType=INTEGER}, #{oilTileAcceptState,jdbcType=INTEGER}, 
@@ -290,14 +291,17 @@
       <if test="startWorkStatus != null">
         start_work_status,
       </if>
-      <if test="designMonitorStatus != null">
-        design_monitor_status,
-      </if>
       <if test="customMetricStatus != null">
         custom_metric_status,
       </if>
       <if test="kitchenDesignStatus != null">
         kitchen_design_status,
+      </if>
+      <if test="customMetricStatus1 != null">
+        custom_metric_status1,
+      </if>
+      <if test="kitchenDesignStatus1 != null">
+        kitchen_design_status1,
       </if>
       <if test="suspensionType != null">
         suspension_type,
@@ -490,14 +494,17 @@
       <if test="startWorkStatus != null">
         #{startWorkStatus,jdbcType=INTEGER},
       </if>
-      <if test="designMonitorStatus != null">
-        #{designMonitorStatus,jdbcType=INTEGER},
-      </if>
       <if test="customMetricStatus != null">
         #{customMetricStatus,jdbcType=VARCHAR},
       </if>
       <if test="kitchenDesignStatus != null">
         #{kitchenDesignStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="customMetricStatus1 != null">
+        #{customMetricStatus1,jdbcType=VARCHAR},
+      </if>
+      <if test="kitchenDesignStatus1 != null">
+        #{kitchenDesignStatus1,jdbcType=VARCHAR},
       </if>
       <if test="suspensionType != null">
         #{suspensionType,jdbcType=INTEGER},
@@ -690,14 +697,17 @@
       <if test="startWorkStatus != null">
         start_work_status = #{startWorkStatus,jdbcType=INTEGER},
       </if>
-      <if test="designMonitorStatus != null">
-        design_monitor_status = #{designMonitorStatus,jdbcType=INTEGER},
-      </if>
       <if test="customMetricStatus != null">
         custom_metric_status = #{customMetricStatus,jdbcType=VARCHAR},
       </if>
       <if test="kitchenDesignStatus != null">
         kitchen_design_status = #{kitchenDesignStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="customMetricStatus1 != null">
+        custom_metric_status1 = #{customMetricStatus1,jdbcType=VARCHAR},
+      </if>
+      <if test="kitchenDesignStatus1 != null">
+        kitchen_design_status1 = #{kitchenDesignStatus1,jdbcType=VARCHAR},
       </if>
       <if test="suspensionType != null">
         suspension_type = #{suspensionType,jdbcType=INTEGER},
@@ -798,9 +808,10 @@
       order_label_str = #{orderLabelStr,jdbcType=VARCHAR},
       dismantle_status = #{dismantleStatus,jdbcType=INTEGER},
       start_work_status = #{startWorkStatus,jdbcType=INTEGER},
-      design_monitor_status = #{designMonitorStatus,jdbcType=INTEGER},
       custom_metric_status = #{customMetricStatus,jdbcType=VARCHAR},
       kitchen_design_status = #{kitchenDesignStatus,jdbcType=VARCHAR},
+      custom_metric_status1 = #{customMetricStatus1,jdbcType=VARCHAR},
+      kitchen_design_status1 = #{kitchenDesignStatus1,jdbcType=VARCHAR},
       suspension_type = #{suspensionType,jdbcType=INTEGER},
       presentation_version_no = #{presentationVersionNo,jdbcType=INTEGER},
       apply_suspension_date = #{applySuspensionDate,jdbcType=TIMESTAMP},

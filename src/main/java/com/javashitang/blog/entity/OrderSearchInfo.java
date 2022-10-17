@@ -97,11 +97,13 @@ public class OrderSearchInfo {
 
     private Integer startWorkStatus;
 
-    private Integer designMonitorStatus;
-
     private String customMetricStatus;
 
     private String kitchenDesignStatus;
+
+    private String customMetricStatus1;
+
+    private String kitchenDesignStatus1;
 
     private Integer suspensionType;
 
@@ -135,7 +137,7 @@ public class OrderSearchInfo {
 
     private String orderOoTag;
 
-    public OrderSearchInfo(Long id, String orderCode, String hirecontractCode, Integer orderType, Integer orderState, String cityCode, String rentContractCode, String orderZo, String orderZoCode, String orderZe, String orderZeCode, LocalDateTime receiveOrderTime, LocalDateTime acceptDate, Long roomId, Integer isSuspension, LocalDateTime planAcceptDate, LocalDateTime planAmountDate, String orderProcessor, String orderProcessorCode, String orderZd, String orderZdCode, Integer isRisk, LocalDateTime handOverDate, LocalDateTime agentStartDate, String houseSourceCode, String houseCode, String ratingAddress, Integer ziroomVersionId, Integer productId, Integer companyHouseSource, String bzOrderExtend, LocalDateTime orderCreateTime, LocalDateTime lastModifyTime, LocalDateTime createTime, LocalDateTime updateTime, Integer isDel, Integer designState, Integer hireContractIsDel, Integer approvalConfigCount, String assistant, String assistantCode, String configAuditStatus, Integer selfCheckStatus, Integer dispatchOrderStatus, String orderLabelStr, Integer dismantleStatus, Integer startWorkStatus, Integer designMonitorStatus, String customMetricStatus, String kitchenDesignStatus, Integer suspensionType, Integer presentationVersionNo, LocalDateTime applySuspensionDate, LocalDateTime removeSuspensionDate, Integer layLineAcceptState, Integer waterElectricityAcceptState, Integer waterProofAcceptState, Integer oilTileAcceptState, Integer hardCoverAcceptState, String orderOo, String orderOoCode, String orderOoManager, String orderOoManagerCode, String orderOoAssist, String orderOoAssistCode, String orderOoTag) {
+    public OrderSearchInfo(Long id, String orderCode, String hirecontractCode, Integer orderType, Integer orderState, String cityCode, String rentContractCode, String orderZo, String orderZoCode, String orderZe, String orderZeCode, LocalDateTime receiveOrderTime, LocalDateTime acceptDate, Long roomId, Integer isSuspension, LocalDateTime planAcceptDate, LocalDateTime planAmountDate, String orderProcessor, String orderProcessorCode, String orderZd, String orderZdCode, Integer isRisk, LocalDateTime handOverDate, LocalDateTime agentStartDate, String houseSourceCode, String houseCode, String ratingAddress, Integer ziroomVersionId, Integer productId, Integer companyHouseSource, String bzOrderExtend, LocalDateTime orderCreateTime, LocalDateTime lastModifyTime, LocalDateTime createTime, LocalDateTime updateTime, Integer isDel, Integer designState, Integer hireContractIsDel, Integer approvalConfigCount, String assistant, String assistantCode, String configAuditStatus, Integer selfCheckStatus, Integer dispatchOrderStatus, String orderLabelStr, Integer dismantleStatus, Integer startWorkStatus, String customMetricStatus, String kitchenDesignStatus, String customMetricStatus1, String kitchenDesignStatus1, Integer suspensionType, Integer presentationVersionNo, LocalDateTime applySuspensionDate, LocalDateTime removeSuspensionDate, Integer layLineAcceptState, Integer waterElectricityAcceptState, Integer waterProofAcceptState, Integer oilTileAcceptState, Integer hardCoverAcceptState, String orderOo, String orderOoCode, String orderOoManager, String orderOoManagerCode, String orderOoAssist, String orderOoAssistCode, String orderOoTag) {
         this.id = id;
         this.orderCode = orderCode;
         this.hirecontractCode = hirecontractCode;
@@ -183,9 +185,10 @@ public class OrderSearchInfo {
         this.orderLabelStr = orderLabelStr;
         this.dismantleStatus = dismantleStatus;
         this.startWorkStatus = startWorkStatus;
-        this.designMonitorStatus = designMonitorStatus;
         this.customMetricStatus = customMetricStatus;
         this.kitchenDesignStatus = kitchenDesignStatus;
+        this.customMetricStatus1 = customMetricStatus1;
+        this.kitchenDesignStatus1 = kitchenDesignStatus1;
         this.suspensionType = suspensionType;
         this.presentationVersionNo = presentationVersionNo;
         this.applySuspensionDate = applySuspensionDate;
@@ -584,14 +587,6 @@ public class OrderSearchInfo {
         this.startWorkStatus = startWorkStatus;
     }
 
-    public Integer getDesignMonitorStatus() {
-        return designMonitorStatus;
-    }
-
-    public void setDesignMonitorStatus(Integer designMonitorStatus) {
-        this.designMonitorStatus = designMonitorStatus;
-    }
-
     public String getCustomMetricStatus() {
         return customMetricStatus;
     }
@@ -606,6 +601,22 @@ public class OrderSearchInfo {
 
     public void setKitchenDesignStatus(String kitchenDesignStatus) {
         this.kitchenDesignStatus = kitchenDesignStatus == null ? null : kitchenDesignStatus.trim();
+    }
+
+    public String getCustomMetricStatus1() {
+        return customMetricStatus1;
+    }
+
+    public void setCustomMetricStatus1(String customMetricStatus1) {
+        this.customMetricStatus1 = customMetricStatus1 == null ? null : customMetricStatus1.trim();
+    }
+
+    public String getKitchenDesignStatus1() {
+        return kitchenDesignStatus1;
+    }
+
+    public void setKitchenDesignStatus1(String kitchenDesignStatus1) {
+        this.kitchenDesignStatus1 = kitchenDesignStatus1 == null ? null : kitchenDesignStatus1.trim();
     }
 
     public Integer getSuspensionType() {
