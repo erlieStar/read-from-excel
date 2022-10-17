@@ -25,6 +25,9 @@ public class OrderData {
     @ExcelProperty(index = 11)
     private String orderZeCode;
 
+    @ExcelProperty(index = 25)
+    private String houseSourceCode;
+
     @ExcelProperty(index = 27)
     private String ratingAddress;
 }
