@@ -28,7 +28,7 @@ public class OrderListener implements ReadListener<OrderData> {
 
     private OrderSearchInfoMapper orderSearchInfoMapper = SpringUtil.getBean(OrderSearchInfoMapper.class);
 
-    private Long index = 3000000L;
+    private Long index = 3000030L;
 
     @Override
     public void invoke(OrderData orderData, AnalysisContext analysisContext) {
