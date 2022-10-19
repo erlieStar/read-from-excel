@@ -15,4 +15,6 @@ public interface ReadService {
     ServerResponse supplier();
 
     ServerResponse order();
+
+    ServerResponse saveData();
 }

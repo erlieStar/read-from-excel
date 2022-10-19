@@ -37,4 +37,9 @@ public class ReadController {
     public ServerResponse order() {
         return readService.order();
     }
+
+    @GetMapping("saveData")
+    public ServerResponse saveData() {
+        return readService.saveData();
+    }
 }

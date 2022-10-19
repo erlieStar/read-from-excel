@@ -1,11 +1,13 @@
 package com.javashitang.blog.service.impl;
 
+import cn.hutool.http.HttpUtil;
 import com.alibaba.excel.EasyExcel;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import com.javashitang.blog.common.ServerResponse;
-import com.javashitang.blog.domain.CategoryData;
-import com.javashitang.blog.domain.MappingData;
-import com.javashitang.blog.domain.OrderData;
-import com.javashitang.blog.domain.SupplierData;
+import com.javashitang.blog.domain.*;
 import com.javashitang.blog.service.listener.CategoryListener;
 import com.javashitang.blog.service.listener.MappingListener;
 import com.javashitang.blog.service.inf.ReadService;
@@ -13,6 +15,10 @@ import com.javashitang.blog.service.listener.OrderListener;
 import com.javashitang.blog.service.listener.SupplierListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @Author: lilimin
@@ -55,6 +61,24 @@ public class ReadServiceImpl implements ReadService {
     public ServerResponse order() {
         log.info("order");
         EasyExcel.read(order_fileName, OrderData.class, new OrderListener()).sheet("工作表1").doRead();
+        return ServerResponse.success();
+    }
+
+    @Override
+    public ServerResponse saveData() {
+        log.info("saveData");
+        Map<String, Object> param = Maps.newHashMap();
+        param.put("queryId", "012a48d9-c986-4594-82b2-cc5026e43ffa");
+        param.put("executionTime", "2022-10-18");
+        param.put("targetTypeExist", "1");
+        param.put("orderTypeExist", "1");
+        param.put("orderCodeExist", "1");
+        param.put("forecastCompleteDateExist", "1");
+        String result = HttpUtil.post("http://dataservice.kq.ziroom.com/dataApi/query", JSON.toJSONString(param));
+        Result<List<OrderInfo>> rpcResp = JSON.parseObject(result, new TypeReference<Result<List<OrderInfo>>>() {});
+        List<OrderInfo> orderInfos = rpcResp.getData();
+        System.out.println(orderInfos.size());
+
         return ServerResponse.success();
     }
 }
